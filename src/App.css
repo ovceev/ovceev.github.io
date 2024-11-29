@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.donate-button {
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  color: #282c34;
+  font-size: 20px;
+  padding: 15px 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.donate-button:hover {
+  background-color: #ffe066;
+}
+
+.donate-button:active {
+  background-color: #ffd700;
+}
+
+.button-container {
+  position: relative;
+}
+
+.flying-star {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  border-radius: 50%;
+  animation: fly 2s ease-out forwards;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(-50px + 100px * random()), -100px) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(calc(-100px + 200px * random()), -200px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Random function for variation in movement */
+@keyframes random {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(50px - 100px * random()));
+  }
+}
